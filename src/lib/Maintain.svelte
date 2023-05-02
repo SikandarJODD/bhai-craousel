@@ -1,4 +1,5 @@
 <script>
+  import IconChange from "./IconChange.svelte";
   let copytext = "Copy Carousel";
   import { imgwidth, imgheight } from "../store";
   import { copy } from "svelte-copy";
@@ -105,6 +106,7 @@
       }}>Set</button
     >
   </form>
+  <div><IconChange /></div>
 </div>
 
 <style>

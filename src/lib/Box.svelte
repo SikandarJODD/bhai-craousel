@@ -33,9 +33,12 @@
   .container div:nth-child(2) {
     display: flex;
     justify-content: center;
-    padding: 10px 10px;
+    padding: 20px 10px;
     height: 500px;
     background-color: rgb(83, 84, 85);
-    width: 340px;
+    width: 300px;
+    position: absolute;
+    top: 70px;
+    right: 20px;
   }
 </style>
