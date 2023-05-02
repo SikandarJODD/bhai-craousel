@@ -1,4 +1,5 @@
 <script>
+  let copytext = "Copy Carousel";
   import { imgwidth, imgheight } from "../store";
   import { copy } from "svelte-copy";
   let brocode =
@@ -79,7 +80,16 @@
 </script>
 
 <div class="container">
-  <button use:copy={brocode}>Copy Carousel</button>
+  <button
+    use:copy={brocode}
+    class="t"
+    on:click={() => {
+      copytext = "Copied";
+      setTimeout(() => {
+        copytext = "Copy Carousel";
+      }, 1000);
+    }}>{copytext}</button
+  >
   <form class="dv">
     <label for="imgwidth">
       <input type="text" bind:value={vwe} />
@@ -98,6 +108,9 @@
 </div>
 
 <style>
+  .t {
+    transition: all 0.3s ease;
+  }
   .dv {
     display: flex;
     align-items: center;
