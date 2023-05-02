@@ -79,7 +79,7 @@
 </script>
 
 <div class="container">
-  <button use:copy={brocode}>Copy</button>
+  <button use:copy={brocode}>Copy Carousel</button>
   <form class="dv">
     <label for="imgwidth">
       <input type="text" bind:value={vwe} />
