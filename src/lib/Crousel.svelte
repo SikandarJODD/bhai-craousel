@@ -1,4 +1,5 @@
 <script>
+  import { imgwidth, imgheight } from "../store";
   let imgsD = [
     {
       id: 1,
@@ -27,14 +28,12 @@
     if (i > imgsD.length - 1) {
       i = 0;
     }
-    console.log(i);
   }
   function prev() {
     i--;
     if (i < 0) {
       i = imgsD.length - 1;
     }
-    console.log(i);
   }
 
   setInterval(next, 3000);
@@ -44,13 +43,16 @@
 </script>
 
 <div>
-  <img src={imgsD[i].imgurl} width="300" alt="lofii art" />
+  <img
+    src={imgsD[i].imgurl}
+    style="width:{$imgwidth}px; height:{$imgheight}px;"
+    alt="lofii art"
+  />
 </div>
 
 <style>
   img {
     height: 650px;
-    width: 1100px;
     border-radius: 10px;
     margin: 0;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;

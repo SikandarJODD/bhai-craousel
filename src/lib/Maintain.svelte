@@ -1,4 +1,5 @@
 <script>
+  import { imgwidth, imgheight } from "../store";
   import { copy } from "svelte-copy";
   let brocode =
     "<" +
@@ -53,10 +54,16 @@
     `
 
 <div>
-  <img src={imgsD[i].imgurl} width="300" alt="lofii art" />
+    <img
+    src={imgsD[i].imgurl}
+    style="width:${$imgwidth}px; height:${$imgheight}px;"
+    alt="lofii art"
+  />
 </div>
 
-<style>
+<` +
+    "style" +
+    `>
   img {
     height: 650px;
     width: 1100px;
@@ -67,8 +74,41 @@
 <` +
     "/style" +
     ">";
+  let vwe = 1100;
+  let vhe = 650;
 </script>
 
 <div class="container">
   <button use:copy={brocode}>Copy</button>
+  <form class="dv">
+    <label for="imgwidth">
+      <input type="text" bind:value={vwe} />
+    </label>
+    <label for="imgwidth">
+      <input type="text" bind:value={vhe} />
+    </label>
+    <button
+      type="button"
+      on:click={() => {
+        imgwidth.update((k) => (k = vwe));
+        imgheight.update((k) => (k = vhe));
+      }}>Set</button
+    >
+  </form>
 </div>
+
+<style>
+  .dv {
+    display: flex;
+    align-items: center;
+  }
+  input {
+    width: 50px;
+    padding: 7px 10px;
+    font-size: medium;
+    margin: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background: #01072da2;
+  }
+</style>

@@ -32,7 +32,7 @@
   }
   .container div:nth-child(2) {
     display: flex;
-    justify-content: left;
+    justify-content: center;
     padding: 10px 10px;
     height: 500px;
     background-color: rgb(83, 84, 85);
